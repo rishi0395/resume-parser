@@ -19,3 +19,57 @@ code {
   --disabled-color: #fad6d6;
   --background-color: #f5eaea;
 }
+
+a {
+  color: unset;
+  text-decoration: unset;
+  cursor: pointer;
+}
+
+p {
+  margin: 10px 0;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+label {
+  font-size: 16px;
+  display: block;
+}
+
+button,
+input {
+  padding: 4px;
+  border: 1px solid var(--disabled-color);
+}
+
+button {
+  outline: none;
+  background: transparent;
+  border-radius: 5px;
+  color: var(--primary-color);
+  transition: all ease 0.8s;
+  cursor: pointer;
+}
+
+button.active {
+  color: var(--primary-color);
+}
+
+button.active:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  padding-top: 4px;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+input:focus {
+  outline: none;
+}
+
+select {
+  outline: none;
+  height: 40px;
+}

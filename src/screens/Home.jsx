@@ -1,15 +1,16 @@
 import React, { useEffect, memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FileUploadButton, Kanban, Table } from "../components";
-import { handleResumeUpload } from "../redux/actions/stateActions";
-import { getState } from "../redux/selectors";
+import { handleResumeUpload } from "../redux/actions/resumeUploadActions";
+import { handleFetchResumes } from "../redux/actions/fetchResumesActions";
+import { getResumes, getState } from "../redux/selectors";
 
 function Home() {
-  const state = useSelector(getState);
+  const resumes = useSelector(getResumes);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(state);
+    dispatch(handleFetchResumes());
   }, []);
 
   const clickHandler = (e) => {
@@ -23,13 +24,11 @@ function Home() {
   };
 
   return (
-    <div
-      // style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
-    >
+    <div>
       <h1>Resume checker</h1>
       <FileUploadButton multiple onClick={clickHandler} />
       {/* <Table /> */}
-      <Kanban />
+      {resumes.length && <Kanban data={resumes} />}
     </div>
   );
 }

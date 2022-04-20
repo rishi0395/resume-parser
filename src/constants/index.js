@@ -1,46 +1,60 @@
-const data = [{
+const data = [
+  {
     id: 1,
     icon: "⭕️",
-    status: "open",
-    title: "Human Interest Form",
-    content: "Fill out human interest distribution form"
-}, {
+    status: "New Candidate",
+    title: "Geetika Sahu",
+    content: "HTML/CSS",
+  },
+  {
     id: 2,
     icon: "⭕️",
-    status: "open",
-    title: "Purchase present",
-    content: "Get an anniversary gift"
-}, {
+    status: "New Candidate",
+    title: "Harsha Sahu",
+    content: "Java script",
+  },
+  {
     id: 3,
     icon: "⭕️",
-    status: "open",
-    title: "Invest in investments",
-    content: "Call the bank to talk about investments"
-}, {
+    status: "New Candidate",
+    title: "Pooja Sahu",
+    content: "Java",
+  },
+  {
     id: 4,
     icon: "⭕️",
-    status: "open",
-    title: "Daily reading",
-    content: "Finish reading Intro to UI/UX"
-}];
+    status: "New Candidate",
+    title: "Sab Sahu",
+    content: "UI/UX",
+  },
+];
 
-const statuses = [{
-    status: "open",
+const statuses = [
+  {
+    status: "New Candidate",
     icon: "⭕️",
-    color: "#EB5A46"
-}, {
-    status: "in progress",
+    color: "#EB5A46",
+  },
+  {
+    status: "Shortlisted",
     icon: "🔆️",
-    color: "#00C2E0"
-}, {
-    status: "in review",
+    color: "#00C2E0",
+  },
+  {
+    status: "Submitted",
     icon: "📝",
-    color: "#C377E0"
-}, {
-    status: "done",
+    color: "#C377E0",
+  },
+  {
+    status: "Scheduling interview",
     icon: "✅",
-    color: "#3981DE"
-}];
-
+    color: "#3981DE",
+  },
+  {
+    status: "HR interview",
+    icon: "✅",
+    color: "#3981DE",
+  },
+];
 
 export { data, statuses };

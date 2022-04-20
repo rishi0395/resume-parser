@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DndProvider } from "react-dnd";
 import Backend from "react-dnd-html5-backend";
 import { data, statuses } from "../../constants";
 import Col from "./Col";
 import DropWrapper from "./DropWrapper";
 import Item from "./Item";
-import './Kanban.css';
+import "./Kanban.css";
 
-const App = () => {
+const Kanban = (props) => {
+  const { data } = props;
   const [items, setItems] = useState(data);
 
   const onDrop = (item, monitor, status) => {
@@ -23,18 +24,20 @@ const App = () => {
 
   const moveItem = (dragIndex, hoverIndex) => {
     const item = items[dragIndex];
+    console.log(item);
     setItems((prevState) => {
       const newItems = prevState.filter((i, idx) => idx !== dragIndex);
       newItems.splice(hoverIndex, 0, item);
       return [...newItems];
     });
   };
+
   return (
     <DndProvider backend={Backend}>
       <div className={"row"}>
         {statuses.map((s) => {
           return (
-            <div key={'status'} className={"col-wrapper"}>
+            <div key={"status"} className={"col-wrapper"}>
               <h2 className={"col-header"}>{s.status.toUpperCase()}</h2>
               <DropWrapper onDrop={onDrop} status={s.status}>
                 <Col>
@@ -59,4 +62,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Kanban;
