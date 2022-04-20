@@ -1,7 +1,7 @@
 import {
-  STATE_INFO_STARTED,
-  STATE_INFO_SUCCESS,
-  STATE_INFO_FAILED,
+  RESUME_UPLOAD_STARTED,
+  RESUME_UPLOAD_SUCCESS,
+  RESUME_UPLOAD_FAILED,
 } from "../actions/types";
 
 const initialState = {
@@ -14,17 +14,17 @@ function stateReducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case STATE_INFO_STARTED:
+    case RESUME_UPLOAD_STARTED:
       return {
         ...state,
         isLoading: true,
         error: { isError: false, message: "" },
       };
 
-    case STATE_INFO_SUCCESS:
+    case RESUME_UPLOAD_SUCCESS:
       return { ...state, isLoading: false, data: payload };
 
-    case STATE_INFO_FAILED:
+    case RESUME_UPLOAD_FAILED:
       return {
         ...state,
         isLoading: false,

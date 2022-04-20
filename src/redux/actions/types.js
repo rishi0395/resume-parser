@@ -1,0 +1,5 @@
+const APP = "resume-uploader";
+
+export const RESUME_UPLOAD_STARTED = `${APP}/RESUME_UPLOAD_STARTED`;
+export const RESUME_UPLOAD_SUCCESS = `${APP}/RESUME_UPLOAD_SUCCESS`;
+export const RESUME_UPLOAD_FAILED = `${APP}/RESUME_UPLOAD_FAILED`;
