@@ -27,7 +27,7 @@ function Home() {
     <div>
       <h1>Resume checker</h1>
       <FileUploadButton multiple onClick={clickHandler} />
-      {/* <Table /> */}
+      <Table />
       {resumes.length && <Kanban data={resumes} />}
     </div>
   );
